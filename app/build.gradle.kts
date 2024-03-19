@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.fikriks.praktikum_pab"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.fikriks.praktikum_pab"
@@ -32,6 +32,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
