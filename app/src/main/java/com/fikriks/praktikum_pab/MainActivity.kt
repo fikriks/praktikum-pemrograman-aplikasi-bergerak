@@ -13,29 +13,36 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.hitung.setOnClickListener{
-            val name = binding.nama.text.toString()
-            binding.outputNama.text = name
+        binding.btnTambah.setOnClickListener{
+            val angka1 = binding.editText1.text.toString().toInt()
+            val angka2 = binding.editText2.text.toString().toInt()
+            val hasil = angka1 + angka2
+            binding.hasil.visibility = View.VISIBLE
+            binding.hasil.text = "Hasil Penjumlahan : $hasil"
+        }
 
-            val gajiStatus: Int = if (binding.menikah.isChecked) {
-                500000
-            } else {
-                0
-            }
+        binding.btnBagi.setOnClickListener{
+            val angka1 = binding.editText1.text.toString().toInt()
+            val angka2 = binding.editText2.text.toString().toInt()
+            val hasil = angka1 / angka2
+            binding.hasil.visibility = View.VISIBLE
+            binding.hasil.text = "Hasil Pembagian : $hasil"
+        }
 
-            val golongan = binding.rgGolongan
-            val gol = golongan.checkedRadioButtonId
-            val gajiGolongan: Int = when (gol) {
-                R.id.rbGolongan1 -> 1000000
-                R.id.rbGolongan2 -> 2000000
-                else -> 0
-            }
+        binding.btnKali.setOnClickListener{
+            val angka1 = binding.editText1.text.toString().toInt()
+            val angka2 = binding.editText2.text.toString().toInt()
+            val hasil = angka1 * angka2
+            binding.hasil.visibility = View.VISIBLE
+            binding.hasil.text = "Hasil Perkalian : $hasil"
+        }
 
-            val totalGaji = gajiStatus + gajiGolongan
-            binding.outputGaji.text = totalGaji.toString()
-            binding.outputStatus.text = if(binding.menikah.isChecked) { "Sudah Menikah" } else { "Belum Menikah" }
-            binding.outputGolongan.text = if(binding.rbGolongan1.isChecked) { "Golongan 1" } else { "Golongan 2" }
-            binding.outputHitung.visibility = View.VISIBLE
+        binding.btnKurang.setOnClickListener{
+            val angka1 = binding.editText1.text.toString().toInt()
+            val angka2 = binding.editText2.text.toString().toInt()
+            val hasil = angka1 - angka2
+            binding.hasil.visibility = View.VISIBLE
+            binding.hasil.text = "Hasil Pengurangan : $hasil"
         }
     }
 }
