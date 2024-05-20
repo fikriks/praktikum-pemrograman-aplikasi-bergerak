@@ -1,4 +1,4 @@
-package com.fikriks.praktikum_pab
+package com.example.myapplication
 
 import org.junit.Test
 
